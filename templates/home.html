@@ -1,0 +1,30 @@
+<div ng-controller="MainController">
+    <div id="datetime">
+        <h3>{{ date.raw | date:'hh:mm:ss' }}</h3>
+        <h3>{{ date.raw | date:'EEEE, MMMM dd, yyyy' }}</h3>
+    </div>
+
+    <div class="countrySelect">
+        <span class="text-warning showLabel">Select Country to show Weather.</span>
+        <select id="countries" class="form-control" ng-model="countriesList" ng-change="changeWeatherShow()">
+            <option value="">Select Country...</option>
+            <option ng-repeat="country in countries" value="{{ country.val }}">{{ country.name }}</option>
+        </select>
+    </div>
+
+    <div id="forecast">
+        <ul class="row list-unstyled">
+            <li ng-repeat="day in weather.forecast.forecastday" class="col-md-3">
+                <div ng-class="{today: $index == 0}" class="weatherInner">
+                    <h4 ng-if="$index == 0">Now</h4>
+                    <h4 ng-if="$index != 0">{{ day.date.weekday }}</h4>
+                    <img class="{{ day.icon }}" ng-src="{{ day.icon_url }}" alt=""/>
+                    <h3>{{ day.high.celsius }} °C</h3>
+                    <h4>{{ day.high.fahrenheit }} °F</h4>
+                </div>
+            </li>
+        </ul>
+
+        <!--<pre>{{ weather.forecast | json }}</pre>-->
+    </div>
+</div>

@@ -1,0 +1,43 @@
+body {
+    background-color: #dcdcdc;
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 800px;
+}
+#mainContainer {
+    position: relative;
+}
+#datetime {
+    text-align: center;
+}
+#datetime h1 {
+    font-size: 6.1em;
+}
+#datetime h2 {
+    font-size: 1.0em;
+}
+#forecast {
+    margin: 0 50px;
+}
+#forecast .weatherInner {
+   text-align: center;
+   margin-bottom: 20px;
+   background: #fff;
+   border: 2px solid #fafafa;
+}
+.countrySelect {
+    margin: 50px 50px 40px 50px;
+    text-align: center;
+}
+.showLabel {
+    font-size: 1.4em;
+    display: block;
+    margin-bottom: 20px;
+}
+#countries {
+    width: 250px;
+    margin: 0 auto;
+}
